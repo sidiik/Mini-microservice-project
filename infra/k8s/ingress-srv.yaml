@@ -13,9 +13,16 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: '/'
+            path: '/api/users'
             backend:
               service:
                 name: users-service-app
                 port:
                   number: 4000
+          - pathType: Prefix
+            path: '/api/departments/'
+            backend:
+              service:
+                name: department-service
+                port:
+                  number: 4001
