@@ -14,10 +14,6 @@ spec:
       containers:
         - name: department-service
           image: sidiik/department-service-app
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '500m'
           ports:
             - containerPort: 4001
 

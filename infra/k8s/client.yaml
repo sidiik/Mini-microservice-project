@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-service-app
+spec:
+  selector:
+    matchLabels:
+      app: client-service-app
+  template:
+    metadata:
+      labels:
+        app: client-service-app
+    spec:
+      containers:
+        - name: client-service-app
+          image: sidiik/client-service-app
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service-app
+spec:
+  selector:
+    app: client-service-app
+  ports:
+    - port: 80
+      targetPort: 3000

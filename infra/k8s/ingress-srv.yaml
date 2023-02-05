@@ -26,3 +26,18 @@ spec:
                 name: department-service
                 port:
                   number: 4001
+          - pathType: Prefix
+            path: '/client'
+            backend:
+              service:
+                name: client-service-app
+                port:
+                  number: 3000
+
+          - pathType: Prefix
+            path: '/api/shifts'
+            backend:
+              service:
+                name: shift-service-app
+                port:
+                  number: 4002
